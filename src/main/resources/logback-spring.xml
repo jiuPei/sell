@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
 <configuration>
 
     <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
@@ -8,7 +9,6 @@
             </pattern>
         </layout>
     </appender>
-<appender name="fileUnLog">
 
     <appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
