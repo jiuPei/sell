@@ -76,10 +76,10 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Override
     public ProductInfo onSale(String productId) {
         ProductInfo productInfo = repository.findOne(productId);
-        if (productInfo == null){
+        if (productInfo == null) {
             throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
         }
-        if (productInfo.getProductStatusEnum() == ProductStatusEnum.UP){
+        if (productInfo.getProductStatusEnum() == ProductStatusEnum.UP) {
             throw new SellException(ResultEnum.PRODUCT_STATUS_ERROR);
         }
 
@@ -91,10 +91,10 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Override
     public ProductInfo offSale(String productId) {
         ProductInfo productInfo = repository.findOne(productId);
-        if (productInfo == null){
+        if (productInfo == null) {
             throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
         }
-        if (productInfo.getProductStatusEnum() == ProductStatusEnum.DOWN){
+        if (productInfo.getProductStatusEnum() == ProductStatusEnum.DOWN) {
             throw new SellException(ResultEnum.PRODUCT_STATUS_ERROR);
         }
 
