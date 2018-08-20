@@ -1,9 +1,10 @@
 package com.imooc.enums;
 
+import com.sun.org.apache.bcel.internal.generic.RETURN;
 import lombok.Getter;
 
 @Getter
-public enum  OrderStatusEnum {
+public enum  OrderStatusEnum implements CodeEnum {
 
     NEW(0,"新订单"),
     FINSHED(1,"完结"),
@@ -18,4 +19,6 @@ public enum  OrderStatusEnum {
         this.code = code;
         this.message = message;
     }
+
+
 }

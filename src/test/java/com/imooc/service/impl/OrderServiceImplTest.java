@@ -37,7 +37,7 @@ public class OrderServiceImplTest {
     @Test
     public void create() throws Exception {
         OrderDTO orderDTO = new OrderDTO();
-        orderDTO.setBuyerName("廖师兄");
+        orderDTO.setBuyerName("王大锤");
         orderDTO.setBuyerAddress("南京市");
         orderDTO.setBuyerPhone("15445135469");
         orderDTO.setBuyerOpenid(BUYER_OPENID);
@@ -45,8 +45,8 @@ public class OrderServiceImplTest {
         //购物车
         List<OrderDetail> orderDetailList = new ArrayList<>();
         OrderDetail o1 = new OrderDetail();
-        o1.setProductId("2");
-        o1.setProductQuantity(2);
+        o1.setProductId("1");
+        o1.setProductQuantity(1);
 
         OrderDetail o2 = new OrderDetail();
         o2.setProductId("1");
@@ -97,5 +97,13 @@ public class OrderServiceImplTest {
         OrderDTO orderDTO = orderService.findOne("2");
         OrderDTO result = orderService.paid(orderDTO);
         Assert.assertEquals(PayStatusEnum.SUCCESS.getCode(), result.getPayStatus());
+    }
+
+    @Test
+    public void list() throws Exception {
+        PageRequest request = new PageRequest(0,1);
+        Page<OrderDTO> orderDTOPage = orderService.findList(request);
+        System.out.println(orderDTOPage.getContent());
+        Assert.assertNotEquals(0,orderDTOPage.getTotalElements());
     }
 }

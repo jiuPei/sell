@@ -11,8 +11,8 @@ import com.lly835.bestpay.model.RefundResponse;
  * @Version 1.0
  */
 public interface PayService {
-//    PayResponse create(OrderDTO orderDTO);
-//    PayResponse notify(String notidyData);
-//    RefundResponse refund(OrderDTO orderDTO);
+    PayResponse create(OrderDTO orderDTO);
+    PayResponse notify(String notidyData);
+    RefundResponse refund(OrderDTO orderDTO);
 
 }
